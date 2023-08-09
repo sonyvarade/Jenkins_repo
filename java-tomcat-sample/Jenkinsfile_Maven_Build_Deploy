@@ -34,7 +34,7 @@ pipeline {
                 environment name: 'SDLC_ENV', value: 'dev'
             }
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://44.197.219.192:8090/')], contextPath: 'dev-java-tomcat-pipeline-sample', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://44.204.130.134:8090/')], contextPath: 'dev-java-tomcat-pipeline-sample', war: '**/*.war'
             }
         }
         stage('DeployToQa') {
@@ -42,7 +42,7 @@ pipeline {
                 environment name: 'SDLC_ENV', value: 'qa'
             }
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://44.197.219.192:8090/')], contextPath: 'qa-java-tomcat-pipeline-sample', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://44.204.130.134:8090/')], contextPath: 'qa-java-tomcat-pipeline-sample', war: '**/*.war'
             }
         }
         stage('DeployToProd') {
@@ -50,7 +50,7 @@ pipeline {
                 environment name: 'SDLC_ENV', value: 'prod'
             }
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://44.197.219.192:8090/')], contextPath: 'prod-java-tomcat-pipeline-sample', war:'**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat_creds', path: '', url: 'http://44.204.130.134:8090/')], contextPath: 'prod-java-tomcat-pipeline-sample', war:'**/*.war'
             }
         }
     }
